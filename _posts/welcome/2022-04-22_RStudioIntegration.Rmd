@@ -1,0 +1,88 @@
+---
+title: "Using Rstudio with MySQL and Python"
+date: "`r Sys.Date()`"
+description: |
+  A pragmatic guide and simple guide to using MySQL ad Python inside RStudio 
+
+output: 
+  distill::distill_article:
+  toc: true
+---
+```{r, eval=TRUE, echo=FALSE, include=TRUE}
+currentdate <- Sys.Date()
+paste("Date:" ,currentdate)
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+One of my wonderful discoveries in RStudio is being able to connect to the various tools sets that I would not only use but to have it all in one place. Where I can import and export data with ease between MySQL and python and r. This blog is an example on how to connect to all these tools easily and simply. 
+
+To connect to your local instance of MySQL, you will need to install and use the RMySQL and DBI libraries. 
+
+```{r}
+#install.packages("RMySQL")
+library(RMySQL)
+library(DBI)
+```
+
+To connect to user = root or replace root with your username. For your password it's a good idea to tuck it away in your $home directory in a file called .my.cnf and define a group called "clients"
+
+Using bash - This is what my file looks like:
+
+```{bash}
+
+cat -n /Users/eileen/.my.cnf
+
+```
+
+Then use the client group to mask your password and remember to change user, if you don't use root.
+
+```{r}
+con <- dbConnect(RMySQL::MySQL(),
+                 host = "127.0.0.1",
+                 port = 3306, 
+                 user = "root",
+                 group = 'client'
+                 )
+```
+
+The connection is saved in the con variable that makes it easy to retrieve, if you have any problems or just want to make sure that you are connected.
+
+```{r}
+summary(con)
+```
+ Now you can execute the MySQL commands directly. Make sure that you are in the sql chunk and your connection = "con".
+ 
+```{sql connection=con}
+
+show databases;
+```
+Don't forget to close your connection, when you are finished.
+
+```{r}
+dbDisconnect(con)
+```
+
+For python, we need to install the reticulate package. 
+
+```{r}
+library(reticulate, quietly = T)
+#suppressPackageStartupMessages(library("reticulate"))
+options(reticulate.repl.quiet = TRUE)
+use_virtualenv("r-reticulate")
+#use_python("/usr/local/bin/python3")
+```
+
+
+```{r}
+#execute find python3 or where (on windows)
+# in the terminal
+use_python("/usr/local/bin/python3")
+```
+
+```{python}
+print("hello ok")
+```
+
+
