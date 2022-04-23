@@ -1,0 +1,8 @@
+---
+title: "Unexpected Expectations"
+description: Exploration of Data and Tools used in Data Science|
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
