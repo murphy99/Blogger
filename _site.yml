@@ -1,7 +1,7 @@
 name: "goData.ca"
 title: "goData"
 description: Exploration of Data and Tools used in Data Science |
-output_dir: "_docs"
+output_dir: "docs"
 search: true
 include: ["import.R"]
 exclude: ["docs.txt", "*.csv"]
