@@ -1,6 +1,6 @@
-name: "goData.ca"
-title: "goData"
-description: Exploration of Data and Tools used in Data Science |
+name: "GoData.ca"
+title: "GoData.ca"
+description:  |
 output_dir: "docs"
 search: true
 include: ["import.R"]
