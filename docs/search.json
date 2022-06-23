@@ -2,17 +2,17 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "Eileen Murphy",
+      "title": "Eileen P. Murphy",
       "author": [],
-      "contents": "\n\n          \n          \n          GoData.ca\n          \n          \n          Home\n          About\n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Eileen Murphy\n          \n          \n            \n              Welcome to the GoData Blog. The goal of this blog is to keep the articles clean, simple, and minimalist for ultimate clarity.\n            \n            \n              Welcome to the GoData Blog. The goal of this blog is to keep the articles clean, simple, and minimalist for ultimate clarity.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      Twitter\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    Twitter\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
-      "last_modified": "2022-05-23T13:50:15-04:00"
+      "contents": "\n\n          \n          \n          GoData.ca\n          \n          \n          Home\n          About\n          \n          \n          \n          ☰\n          \n          \n      \n        \n          \n            Eileen P. Murphy\n          \n          \n            \n              Welcome to the GoData Blog. The goal of this blog is to keep the articles clean, simple, and minimalist for ultimate clarity.\n            \n            \n              Welcome to the GoData Blog. The goal of this blog is to keep the articles clean, simple, and minimalist for ultimate clarity.\n            \n          \n\n          \n            \n              \n                  \n                    \n                      LinkedIn\n                    \n                  \n                \n                                \n                  \n                    \n                      GitHub\n                    \n                  \n                \n                                \n                  \n                    \n                      Email\n                    \n                  \n                \n                              \n          \n\n          \n            \n              \n                                \n                  \n                    LinkedIn\n                  \n                \n                                \n                  \n                    GitHub\n                  \n                \n                                \n                  \n                    Email\n                  \n                \n                              \n            \n          \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2022-06-15T08:27:48-04:00"
     },
     {
       "path": "index.html",
       "title": "goData",
       "author": [],
       "contents": "\n\n\n\n",
-      "last_modified": "2022-05-23T13:50:15-04:00"
+      "last_modified": "2022-06-15T08:27:49-04:00"
     }
   ],
   "collections": ["posts/posts.json"]

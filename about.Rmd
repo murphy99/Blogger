@@ -1,17 +1,16 @@
 ---
-title: "Eileen Murphy"
+title: "Eileen P. Murphy"
 image: ""
 links:
   - label: LinkedIn
-    url: "https://linkedin.com/"
-  - label: Twitter
-    url: "https://twitter.com/"
+    url: "https://www.linkedin.com/in/eileen-p-m-1948464/"
   - label: GitHub
-    url: "https://github.com/"
+    url: "https://github.com/murphy99"
   - label: Email
-    url: "mailto:email@email.com"
+    url: "mailto:emurphy@godata.ca?subject=GoData Blog"
 output:
   postcards::jolla
 ---
  
 Welcome to the GoData Blog. The goal of this blog is to keep the articles clean, simple, and minimalist for ultimate clarity. 
+

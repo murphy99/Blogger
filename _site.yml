@@ -5,6 +5,8 @@ output_dir: "docs"
 search: true
 include: ["import.R"]
 exclude: ["docs.txt", "*.csv"]
+base_url: "https://murphy99.github.io/godata/"
+theme: theme.css
 
 navbar:
   right:

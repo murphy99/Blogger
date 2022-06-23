@@ -1,17 +1,27 @@
 ---
-title: "Using Rstudio with MySQL and Python"
+title: "Using Rstudio with MySQL, Bash, and Python"
 date: "`r Sys.Date()`"
 description: |
-  A pragmatic guide and simple guide to using MySQL ad Python inside RStudio 
-
+  A pragmatic guide and simple guide to using MySQL, Python and Bash inside RStudio  
+preview: ../../images/r_chunks.png
 output: 
   distill::distill_article:
   toc: true
----
-```{r, eval=TRUE, echo=FALSE, include=TRUE}
+---  
+
+As a preface, please note that this article was compliled and updated using the following verrsions. Here is a way, to compare your versions with what this article was compiled on.
+
+```{r, eval=TRUE, echo=TRUE, include=TRUE}
 currentdate <- Sys.Date()
-paste("Date:" ,currentdate)
+library("utils")
+library("rstudioapi")
+RStudio_info <- rstudioapi::versionInfo()
+paste("Updated on:" ,currentdate, "Using: ", R.version.string,
+      "and RStudio version: ", RStudio_info$version)
+
 ```
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -31,9 +41,7 @@ To connect to user = root or replace root with your username. For your password 
 Using bash - This is what my file looks like:
 
 ```{bash}
-
 cat -n /Users/eileen/.my.cnf
-
 ```
 
 Then use the client group to mask your password and remember to change user, if you don't use root.
@@ -49,15 +57,20 @@ con <- dbConnect(RMySQL::MySQL(),
 
 The connection is saved in the con variable that makes it easy to retrieve, if you have any problems or just want to make sure that you are connected.
 
+```{sql connection=con}
+use godata;
+```
+ 
 ```{r}
 summary(con)
 ```
+ 
  Now you can execute the MySQL commands directly. Make sure that you are in the sql chunk and your connection = "con".
  
 ```{sql connection=con}
-
 show databases;
 ```
+
 Don't forget to close your connection, when you are finished.
 
 ```{r}
@@ -68,21 +81,35 @@ For python, we need to install the reticulate package.
 
 ```{r}
 library(reticulate, quietly = T)
-#suppressPackageStartupMessages(library("reticulate"))
 options(reticulate.repl.quiet = TRUE)
 use_virtualenv("r-reticulate")
 #use_python("/usr/local/bin/python3")
 ```
 
+Use the python version you are using by typing "find python" on the mac or where python in windows using a terminal session. 
 
 ```{r}
 #execute find python3 or where (on windows)
 # in the terminal
-use_python("/usr/local/bin/python3")
+#use_python("/Users/Eileen/opt/anaconda3/bin/python")
+use_python("/usr/local/bin/python3.9")
 ```
+
+If you notice that python is not printing in the for loop after printing outside of it - then use the flush = True in the print statement before the loop.
 
 ```{python}
-print("hello ok")
+#Test python program
+
+statement = "Python is a powerful language that can be used in Rstudio"
+print(statement)
+statementList = statement.split(sep=" ")
+print(statementList, flush=True)
+for iCounter in range(len(statementList)):
+  print(statementList[iCounter])
 ```
 
+## Acknowledgments {.appendix}
 
+  RStudio Team (2021). RStudio: Integrated Development
+  Environment for R. RStudio, PBC, Boston, MA URL
+  http://www.rstudio.com/.
